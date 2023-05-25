@@ -23,50 +23,20 @@ class GFG
 // } Driver Code Ends
 
 
-
-class Solution
-{
-    //Function to find the maximum occurring character in a string.
-    public static char getMaxOccuringChar(String line)
-    {
-         HashMap<Character,Integer> hm=new HashMap<>();
-         for(int i=0;i<line.length();i++)
-         {
-             if(hm.containsKey(line.charAt(i)))
-             {
-                 int k=hm.get(line.charAt(i));
-                 k++;
-                 hm.put(line.charAt(i),k);
-             }
-             else
-             hm.put(line.charAt(i),1);
-         }
-         
-         //System.out.println(hm);
-         
-         
-         
-         char ret=line.charAt(0);
-         int max=hm.get(line.charAt(0));
-         for(Character l:hm.keySet())
-         {
-             if(max<hm.get(l)){
-             max=hm.get(l);
-             //System.out.println(l);
-             
-                 ret=l;
-             }
-             
-             else if(max==hm.get(l))
-             {
-                 ret=(ret<l)?ret:l;
-             }
-         }
-         
-         
-         return ret;
-         
-         
+class Solution {
+    public static char getMaxOccuringChar(String line) {
+        int[] count = new int[26];
+        for (int i = 0; i < line.length(); i++) {
+            count[line.charAt(i) - 'a']++;
+        }
+        int max = -1;
+        char result = ' ';
+        for (int i = 0; i < 26; i++) {
+            if (count[i] > max) {
+                max = count[i];
+                result = (char) (i + 'a');
+            }
+        }
+        return result;
     }
-    
 }
