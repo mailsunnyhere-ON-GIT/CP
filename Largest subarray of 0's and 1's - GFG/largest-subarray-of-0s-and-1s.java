@@ -53,12 +53,10 @@ class Solution {
                     if(x>result)
                     result=x;
             }
-    if(hm.containsKey(sum)){
-             continue;}
+    
+    
             else
             hm.put(sum,i);
-            //else
-            //hm.put(sum,i);
             
         }
         return result;
