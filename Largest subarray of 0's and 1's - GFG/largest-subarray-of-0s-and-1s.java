@@ -49,12 +49,12 @@ class Solution {
             sum=sum+arr[i];
             if(hm.containsKey(sum-K))
             {
-                int x=i-hm.get(sum-K);
-                if(x>result)
-                result=x;
+                    int x=i-hm.get(sum-K);
+                    if(x>result)
+                    result=x;
             }
-            if(hm.containsKey(sum)){
-               continue;}
+           // if(hm.containsKey(sum)){
+             //  continue;}
             else
             hm.put(sum,i);
             
