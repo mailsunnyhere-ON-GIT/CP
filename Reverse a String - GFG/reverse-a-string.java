@@ -31,14 +31,12 @@ class Reverse
     // str: input string
     public static String reverseWord(String str)
     {
-        String x="";
-        for(int i=str.length()-1;i>=0;i--)
-        {
-            
-                String x1=Character.toString(str.charAt(i));
-            x=x.concat(x1);
-            
-        }
-        return x;
+        char[] k=str.toCharArray();
+        for (int i = 0; i < k.length / 2; i++) {
+        char temp = k[i];
+        k[i] = k[k.length - 1 - i];
+        k[k.length - 1 - i] = temp;
+    }
+        return new String(k);
     }
 }
