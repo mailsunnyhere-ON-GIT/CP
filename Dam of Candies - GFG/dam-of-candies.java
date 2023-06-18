@@ -35,7 +35,7 @@ class Solution
 	    }
 	    
 	    
-	     if(x[start]==x[end])
+	    if(x[start]==x[end])
 	    {
 	        
 	        int cal=(end-start-1)*x[start];
