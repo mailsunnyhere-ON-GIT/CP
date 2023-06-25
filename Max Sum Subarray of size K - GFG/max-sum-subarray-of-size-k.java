@@ -47,6 +47,7 @@ class Solution{
         long max = windowSize;
         for(int i = K; i < N; i++) {
             windowSize = windowSize - Arr.get(i-K) + Arr.get(i);
+            
             max = Math.max(windowSize, max);
         }
        
